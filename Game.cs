@@ -23,17 +23,16 @@ namespace GuessTheNumber
                 if (number < dnr)
                 {
                     Console.WriteLine("Больше");
+                    Player.count++;
                 }
                 else if (number > dnr)
                 {
+                    Player.count++;
                     Console.WriteLine("Меньше");
                 }
                 else
                 {
-                    Console.WriteLine("Угадал");
-
-
-
+                    Console.WriteLine($"Угадал!    Число попыток {Player.count}");
                     Console.WriteLine("Ещё хочешь?");
 
                     string next = Console.ReadLine();

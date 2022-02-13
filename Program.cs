@@ -26,7 +26,7 @@ namespace GuessTheNumber
               }
               else
               {
-                  return;
+                Console.WriteLine("Попробуй в другой раз");
               }
 
 
