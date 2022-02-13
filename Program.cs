@@ -9,10 +9,7 @@ namespace GuessTheNumber
         static void Main(string[] args)
         {
            
-
-              Console.WriteLine($"Привет, Сыграем?" +
-                  $"" +
-                  $"YES/NO");
+              Console.WriteLine($"Привет, Сыграем?     YES/NO");
               string vote = Console.ReadLine();
 
               if (vote.ToLower() == "NO")
@@ -28,13 +25,6 @@ namespace GuessTheNumber
               {
                 Console.WriteLine("Попробуй в другой раз");
               }
-
-
           }
-
-          
-  
-
-        
     }
 }
