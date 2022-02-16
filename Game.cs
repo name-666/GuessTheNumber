@@ -7,28 +7,26 @@ namespace GuessTheNumber
         static public bool exit = false;
         static public void game()
         {
-
             int dnr = RandomNumber.number();
-        start:
-            Console.WriteLine("Я загадал число.  Попробуй угадать его");
+         start:
+            Console.Write("Я загадал число.  Попробуй угадать его \n\r ваше число: ");
             while (exit)
             {
                 int number = int.Parse(Console.ReadLine());
                 if (number < dnr)
                 {
-                    Console.WriteLine("Больше");
+                    Console.WriteLine($"Загаданное число больше  вашего {number} числа");
                     Player.count++;
                 }
                 else if (number > dnr)
                 {
                     Player.count++;
-                    Console.WriteLine("Меньше");
+                    Console.WriteLine($"Загаданное число меньше  вашего {number} числа");
                 }
                 else
                 {
-                    Console.WriteLine($"Угадал!    Число попыток {Player.count}");
-                    Console.WriteLine("Ещё хочешь?");
-
+                    Console.WriteLine($"Угадал!  Я загадал число  {dnr}   Число попыток {Player.count}");
+                    Console.WriteLine("Ещё хочешь?   yes/no");
                     string next = Console.ReadLine();
                     if (next.ToLower() == "y" || next.ToLower() == "yes")
                     {
@@ -39,14 +37,8 @@ namespace GuessTheNumber
                         Console.WriteLine("Пока");
                         exit = false;
                     }
-
                 }
-
             }
-
-
-
-
         }
     }
 }

@@ -7,10 +7,6 @@ namespace GuessTheNumber
     {
         static private readonly Random rnd = new();
         static private readonly int i = rnd.Next(1, 999);
-        static public int number()
-        {
-            return i;
-        }
-
+        static public int number() => i;
     }
 }

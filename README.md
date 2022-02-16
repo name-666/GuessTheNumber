@@ -1,1 +1,3 @@
 # GuessTheNumber
+
+Игра гадай число.
