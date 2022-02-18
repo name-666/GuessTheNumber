@@ -4,15 +4,18 @@ namespace GuessTheNumber
 {
     static class Game
     {
-        static public bool exit = false;
+         const int maxNumber= 10;
+         const int minNumber= 0;
+        static public bool exit;
         static public void game()
         {
-            int dnr = RandomNumber.number();
-         start:
+            Random num = new Random();
+           int  dnr =  num.Next(minNumber, maxNumber);
             Console.Write("Я загадал число.  Попробуй угадать его \n\r ваше число: ");
             while (exit)
             {
                 int number = int.Parse(Console.ReadLine());
+
                 if (number < dnr)
                 {
                     Console.WriteLine($"Загаданное число больше  вашего {number} числа");
@@ -30,13 +33,17 @@ namespace GuessTheNumber
                     string next = Console.ReadLine();
                     if (next.ToLower() == "y" || next.ToLower() == "yes")
                     {
-                        goto start;
+                        Console.WriteLine("Я загадал новое число ");
+                        dnr = num.Next(minNumber,maxNumber);
+                        Player.count = 1;
+                        exit = true;
                     }
                     else
                     {
                         Console.WriteLine("Пока");
                         exit = false;
                     }
+
                 }
             }
         }

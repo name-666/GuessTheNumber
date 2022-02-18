@@ -13,6 +13,7 @@ namespace GuessTheNumber
             if (vote.ToLower() == "NO" || vote.ToLower() == "N")
             {
                 Console.WriteLine("Пока");
+                Game.exit = false;
             }
             else if (vote.ToLower() == "yes" || vote.ToLower() == "y")
             {
